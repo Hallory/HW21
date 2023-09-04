@@ -3,7 +3,7 @@ import styles from "./Comment.module.css";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import { useDispatch } from "react-redux";
 import { addComment } from "../../../store/actions/postsActions";
-const Comment = ({ isOpen, setVisible, postId, handleAddComment, post }) => {
+const Comment = ({ isOpen, setVisible, postId}) => {
     const dispatch = useDispatch();
     const comments = useSelector((state) => state.posts[postId].comments);
   const [newCommentText, setNewCommentText] = useState("");
@@ -18,10 +18,10 @@ const Comment = ({ isOpen, setVisible, postId, handleAddComment, post }) => {
 
   const handleCommentSubmit = () => {
     if (newCommentText.trim() === "") {
-      return; // Пустые комментарии не добавляем
+      return; 
     }
     dispatch(addComment(postId, newCommentText));
-    setNewCommentText(""); // Очищаем поле ввода после отправки комментария
+    setNewCommentText("");
   };
 
   return (
@@ -30,7 +30,7 @@ const Comment = ({ isOpen, setVisible, postId, handleAddComment, post }) => {
         <button className={styles.close} onClick={handleCloseModal}>
           &times;
         </button>
-        <h2>Комментарии</h2>
+        <h2>Коментари</h2>
         <ul>
         {comments.map((comment, index) => (
             <li key={index}>{comment}</li>
@@ -38,7 +38,7 @@ const Comment = ({ isOpen, setVisible, postId, handleAddComment, post }) => {
         </ul>
         <div>
           <textarea
-            placeholder="Напишите комментарий"
+            placeholder="Додайте свій коментар..."
             value={newCommentText}
             onChange={(e) => setNewCommentText(e.target.value)}
           ></textarea>
