@@ -19,8 +19,8 @@ const handleAddLike = ()=>{
 const handleAddComment = ()=>{
   setIsCommentModalOpen(!isCommentModalOpen)
 }
-const shareUrl = 'https://google.com'; // Замените на URL вашего поста
-  const title = 'ToGoogle'; //
+const shareUrl = 'https://hallory.github.io/HW21/'; // Замените на URL вашего поста
+  const title = 'HW21'; //
 
   return (
     
