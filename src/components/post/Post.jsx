@@ -21,7 +21,6 @@ const handleAddComment = ()=>{
 }
 const shareUrl = 'https://hallory.github.io/HW21/'; 
   const title = 'HW21'; 
-
   return (
     
     <main>
@@ -63,15 +62,15 @@ const shareUrl = 'https://hallory.github.io/HW21/';
         <div className={module.content__text}>{post.content}</div>
         <div className={module.content__image}><img src={post.image} alt="" /></div>
         <div className={module.activity__content}>
-     <span style={{paddingLeft:"5px"}}>
-      <FontAwesomeIcon className={module.fontIcon} style={isLiked?{color:'red'}:''} onClick={handleAddLike} icon={faHeart}>
+     <span style={{paddingLeft:"5px", userSelect:'none'}}>
+      <FontAwesomeIcon  className={module.fontIcon} style={isLiked?{color:'red', userSelect:'none'}:''} onClick={handleAddLike} icon={faHeart}>
         </FontAwesomeIcon>{post.likes} </span>
-        <FontAwesomeIcon className={module.fontIcon} onClick={handleAddComment} icon={faComment}>
-  <span style={{ paddingLeft: "5px" }}>
-
-    {comments.length}
+     <span style={{ paddingLeft: "5px"}}>   <FontAwesomeIcon className={module.fontIcon} onClick={handleAddComment} icon={faComment}>
+  
+  </FontAwesomeIcon>
+  {comments && comments.length}
   </span>
-</FontAwesomeIcon>
+
 <TelegramShareButton  url={shareUrl} title={title}><FontAwesomeIcon className={module.fontIcon} icon={faShare}><span style={{paddingLeft:"5px"}}>48</span></FontAwesomeIcon></TelegramShareButton>
         <FontAwesomeIcon  className={module.fontIcon} icon={faDownload}><span style={{paddingLeft:"5px"}}>Завантажити</span></FontAwesomeIcon>
         

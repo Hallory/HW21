@@ -1,4 +1,4 @@
-.myModal {
+/* .myModal {
     position:  fixed;
     top: 0;
     bottom: 0;
@@ -19,4 +19,90 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} *//* Comment.module.css */
+
+.myModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  .myModal.active {
+    display: block;
+  }
+  
+  .myModalContent {
+    background-color: #1a1b22;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #282a38;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  ul li {
+    margin: 5px 0;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-width: 600px;
+  }
+  
+  button {
+    background-color: #444744;
+    color: white;
+    padding: 8px 12px; 
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: fit-content; 
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  

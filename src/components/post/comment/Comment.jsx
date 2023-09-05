@@ -25,24 +25,24 @@ const Comment = ({ isOpen, setVisible, postId}) => {
   };
 
   return (
-    <div className={rootClasses.join(" ")}>
-      <div className={styles.myModalContent}>
+    <div className={rootClasses.join(" ")} onClick={()=>setVisible(false)}>
+      <div className={styles.myModalContent}onClick={(e)=>e.stopPropagation()}>
         <button className={styles.close} onClick={handleCloseModal}>
           &times;
         </button>
         <h2>Коментари</h2>
         <ul>
-        {comments.map((comment, index) => (
+        {comments && comments.map((comment, index) => (
             <li key={index}>{comment}</li>
           ))}
         </ul>
-        <div>
+        <div className={styles.form}>
           <textarea
             placeholder="Додайте свій коментар..."
             value={newCommentText}
             onChange={(e) => setNewCommentText(e.target.value)}
           ></textarea>
-          <button onClick={handleCommentSubmit}>Добавить комментарий</button>
+          <button onClick={handleCommentSubmit}>Додати коментар</button>
         </div>
       </div>
           
